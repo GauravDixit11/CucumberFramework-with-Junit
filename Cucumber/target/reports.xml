@@ -1,82 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="95.26">
-    <testcase classname="Launch Admin Interface" name="Verify the Launch Admin Interface of the Application" time="8.66">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="11.496">
+    <testcase classname="Launch Admin Interface" name="Check the existance of G C Reddy link near Copyright text" time="11.237">
         <system-out>
             <![CDATA[When Launch the browser.....................................................passed
 Then Browser should be started..............................................passed
 Given User is on the landing page...........................................passed
-Then Capture the text Administrator Login for verification..................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Launch Admin Interface" name="Verify Mandatory Elements availability in Admin interface home page" time="18.063">
-        <system-out>
-            <![CDATA[When Launch the browser.....................................................passed
-Then Browser should be started..............................................passed
-Given User is on the landing page...........................................passed
-When Click on the link of online Catalog....................................passed
-Then Return the existence status of create an account,login, and Shopping Cart links.passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Launch Admin Interface" name="Verify the Launch Admin Interface with valid credentials." time="17.763">
-        <system-out>
-            <![CDATA[When Launch the browser.....................................................passed
-Then Browser should be started..............................................passed
-Given User is on the landing page...........................................passed
-When Enter username "gcreddy" and password "Temp@2020" and click on login button.passed
-Then User lands on home page of Admin Interface.............................passed
-And Check the text on the home page.........................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Launch Admin Interface" name="Page Redirect Functionality (From Admin to User Interface) before Login" time="11.104">
-        <system-out>
-            <![CDATA[When Launch the browser.....................................................passed
-Then Browser should be started..............................................passed
-Given User is on the landing page...........................................passed
-When Click on the link of online Catalog....................................passed
-Then Verify the user is on User Interface...................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Launch Admin Interface" name="Verify Admin Login Locking Functionality" time="6.675">
-        <system-out>
-            <![CDATA[When Launch the browser.....................................................passed
-Then Browser should be started..............................................passed
-Given User is on the landing page...........................................passed
-When Enter abcdefg and Temp@2020 invalid and click on login button..........passed
-Then Capture the Error message and compare with expected for fourth times...passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Launch Admin Interface" name="Verify Admin Login Locking Functionality 2" time="7.907">
-        <system-out>
-            <![CDATA[When Launch the browser.....................................................passed
-Then Browser should be started..............................................passed
-Given User is on the landing page...........................................passed
-When Enter gcreddy and Temp@0000 invalid and click on login button..........passed
-Then Capture the Error message and compare with expected for fourth times...passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Launch Admin Interface" name="Verify Admin Login Locking Functionality 3" time="15.123">
-        <system-out>
-            <![CDATA[When Launch the browser.....................................................passed
-Then Browser should be started..............................................passed
-Given User is on the landing page...........................................passed
-When Enter abcdxyz and Temp@1111 invalid and click on login button..........passed
-Then Capture the Error message and compare with expected for fourth times...passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Launch Admin Interface" name="Verify Admin Login Locking Functionality 4" time="9.428">
-        <system-out>
-            <![CDATA[When Launch the browser.....................................................passed
-Then Browser should be started..............................................passed
-Given User is on the landing page...........................................passed
-When Enter gcreddy and Temp@2020 invalid and click on login button..........passed
-Then Capture the Error message and compare with expected for fourth times...passed
+When User clicks on the G C Reddy link......................................passed
+Then User should naviagte to next site......................................passed
 ]]>
         </system-out>
     </testcase>

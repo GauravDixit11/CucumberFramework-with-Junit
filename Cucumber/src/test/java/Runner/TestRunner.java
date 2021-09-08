@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "src/test/java/features",
 		glue = "stepDefinition", stepNotifications = true,
-		tags = "@RegressionTest",
+		tags = "@Smoke",
 		plugin = {"pretty","html:target/report.html","junit:target/reports.xml"},
 		dryRun = false,
 		monochrome = true

@@ -1,5 +1,7 @@
 package stepDefinition;
 
+import java.util.ArrayList;
+
 import org.junit.Assert;
 
 import io.cucumber.java.en.Given;
@@ -108,5 +110,21 @@ public class LaunchAdminInterface extends Base{
 		Assert.assertTrue(
 				landingpage.getInvalidAttemptErrorText().getText().contains(landingpage.expectedErrorOnInvalidAttempt));
 	}
+	
+	@When("User clicks on the G C Reddy link")
+    public void user_clicks_on_the_g_c_reddy_link() throws Throwable {
+        landingpage.clickCopyrightUser().click();
+    }
+
+    @Then("User should naviagte to next site")
+    public void user_should_naviagte_to_next_site() {
+       
+    	ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+       String Current = driver.getCurrentUrl();
+       String ex = "https://www.gcreddy.com/";
+       Assert.assertEquals(ex, Current);
+       
+    }
 
 }
