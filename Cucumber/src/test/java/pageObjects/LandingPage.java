@@ -1,5 +1,8 @@
 package pageObjects;
 
+import java.util.ArrayList;
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +12,7 @@ public class LandingPage {
 	public String expectedText = "Administrator Login";
 	public String expectedLoginLimitReachedErrorText = " Error: The maximum number of login attempts has been reached. Please try again in 5 minutes.";
 	public String expectedErrorOnInvalidAttempt = " Error: Invalid administrator login attempt.";
+	public String expectedNewSiteURL = "https://www.gcreddy.com/";
 
 	public LandingPage(WebDriver driver) {
 		this.driver = driver;
@@ -53,6 +57,13 @@ public class LandingPage {
 
 	public WebElement clickCopyrightUser() {
 		return driver.findElement(copyrightUser);
+	}
+	
+	public String userNavigateToSoftwareTestingSite() {
+		ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+		return driver.getCurrentUrl();
+		
 	}
 
 }
