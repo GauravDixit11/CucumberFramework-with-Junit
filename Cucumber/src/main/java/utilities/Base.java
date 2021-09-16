@@ -21,7 +21,9 @@ public class Base {
 		
 		prop = new Properties();
 	
-		FileInputStream fis = new FileInputStream("C:\\Users\\gaurav.dixit01\\eclipse-workspace\\Cucumber\\src\\main\\java\\utilities\\global.properties");
+		
+		String path = System.getProperty("user.dir");
+		FileInputStream fis = new FileInputStream(path+"//global.properties");
 		prop.load(fis);
 		
 		

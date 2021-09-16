@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="13.323">
-    <testcase classname="Launch Admin Interface" name="Check the existance of G C Reddy link near Copyright text" time="13.02">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="28.027">
+    <testcase classname="Launch Admin Interface" name="Check the existance of G C Reddy link near Copyright text" time="27.676">
         <system-out>
             <![CDATA[When Launch the browser.....................................................passed
 Then Browser should be started..............................................passed
