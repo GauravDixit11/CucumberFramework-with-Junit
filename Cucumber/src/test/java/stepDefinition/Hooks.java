@@ -1,21 +1,32 @@
 package stepDefinition;
 
 
-import java.time.Duration;
+
 import java.util.ArrayList;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import utilities.Base;
 
 public class Hooks extends Base{
 
-	
+	@Before
+	public void beforeTest() {
+		
+		String path = System.getProperty("user.dir")+"\\report\\index.html";
+		ExtentSparkReporter reporter =  new ExtentSparkReporter(path);
+		reporter.config().setReportName("Cucumber Test Results");
+		reporter.config().setDocumentTitle("Cucumber Test");
+		
+		ExtentReports extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		extent.setSystemInfo("Tester", "Gaurav Dixit");
+	}
 	
 	@After
 	public void afterSmokeTest() {
@@ -34,7 +45,8 @@ public class Hooks extends Base{
      //   		.withTimeout(Duration.ofSeconds(10))
       //  		.pollingEvery(Duration.ofSeconds(10))
        // 		.ignoring(Exception.class);
-  	
+        
+      
   	}
 	}
 
