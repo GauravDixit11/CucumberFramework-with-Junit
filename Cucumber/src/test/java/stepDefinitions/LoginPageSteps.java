@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinitions;
 
 import org.junit.Assert;
 
@@ -28,7 +28,7 @@ public class LoginPageSteps {
 
 	@Then("page title should be {string}")
 	public void page_title_should_be(String expectedTitleName) {
-		Assert.assertTrue(title.contains(expectedTitleName));
+		Assert.assertTrue(title.equalsIgnoreCase(expectedTitleName));
 	}
 
 	@Then("forgot your password link should be displayed")

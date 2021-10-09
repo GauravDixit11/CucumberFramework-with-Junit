@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinitions;
 
 import java.util.List;
 import java.util.Map;
@@ -16,6 +16,7 @@ public class AccountsPageSteps {
 
 	private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
 	private AccountsPage accountsPage;
+	
 
 	@Given("user has already logged in to application")
 	public void user_has_already_logged_in_to_application(DataTable credTable) {
@@ -23,9 +24,10 @@ public class AccountsPageSteps {
 		List<Map<String, String>> credList = credTable.asMaps();
 		String userName = credList.get(0).get("username");
 		String password = credList.get(0).get("password");
+		
 
 		DriverFactory.getDriver()
-				.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+		.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
 		accountsPage = loginPage.doLogin(userName, password);
 
 	}

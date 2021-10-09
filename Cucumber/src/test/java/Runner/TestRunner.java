@@ -7,12 +7,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/AccountsPage.feature",
-		glue = "stepDefinition", stepNotifications = true,
+		features = "src/test/resources/features",
+		glue = {"stepDefinitions", "AppHooks"}, stepNotifications = true,
 		plugin = {"pretty",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"timeline:test-output-thread/",
-				 "rerun:target/rerun.txt"},
+				"rerun:target/rerun.txt"},
 		dryRun = false,
 		monochrome = true
 		
