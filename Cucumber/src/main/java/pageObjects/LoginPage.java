@@ -35,6 +35,22 @@ public class LoginPage {
 		driver.findElement(password).sendKeys(pwd);
 	}
 
+	public By getPassword() {
+		return password;
+	}
+
+	public void setPassword(By password) {
+		this.password = password;
+	}
+
+	public By getSignInButton() {
+		return signInButton;
+	}
+
+	public void setSignInButton(By signInButton) {
+		this.signInButton = signInButton;
+	}
+
 	public void clickOnLogin() {
 		driver.findElement(signInButton).click();
 	}
