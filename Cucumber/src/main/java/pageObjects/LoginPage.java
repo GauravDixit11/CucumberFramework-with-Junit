@@ -7,17 +7,19 @@ public class LoginPage {
 	private WebDriver driver;
 
 	// 1. By Locators: OR
-	private By emailId = By.id("email");
-	private By password = By.id("passwd");
-	private By signInButton = By.id("SubmitLogin");
-	private By forgotPwdLink = By.linkText("Forgot your password?");
+	private By emailId = By.id("input-email");
+	private By password = By.id("input-password");
+	private By signInButton = By.xpath("//input[@value='Login']");
+	private By forgotPwdLink = By.linkText("Forgotten Password");
+	private By myAccount = By.xpath("//span[text()='My Account']");
+	private By loginButton = By.xpath("//a[text()='Login']");
 
 	// 2. Constructor of the page class:
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	// 3. page actions: features(behavior) of the page the form of methods:
+	// 3. Page actions: features(behavior) of the page the form of methods:
 
 	public String getLoginPageTitle() {
 		return driver.getTitle();
@@ -55,12 +57,19 @@ public class LoginPage {
 		driver.findElement(signInButton).click();
 	}
 
-	public AccountsPage doLogin(String un, String pwd) {
+	public LandingPage doLogin(String un, String pwd) {
 		System.out.println("login with: " + un + " and " + pwd);
 		driver.findElement(emailId).sendKeys(un);
 		driver.findElement(password).sendKeys(pwd);
 		driver.findElement(signInButton).click();
-		return new AccountsPage(driver);
+		return new LandingPage(driver);
 	}
+	
+	public LandingPage navigateToLoginPage() {
+		driver.findElement(myAccount).click();
+		driver.findElement(loginButton).click();
+		return new LandingPage(driver);
+	}
+
 
 }

@@ -20,7 +20,7 @@ public class ContactUsSteps {
 
 	@Given("user navigates to contact us page")
 	public void user_navigates_to_contact_us_page() {
-		DriverFactory.getDriver().get("http://automationpractice.com/index.php?controller=contact");
+		DriverFactory.getDriver().get("https://naveenautomationlabs.com/opencart/index.php?route=information/contact");
 	}
 
 	@When("user fills the form from given sheetname {string} and rownumber {int}")
@@ -30,12 +30,11 @@ public class ContactUsSteps {
 		List<Map<String,String>> testData = 
 				reader.getData("./src/test/resources/config/Automation.xlsx", sheetName);
 		
-		String heading = testData.get(rowNumber).get("subjectheading");
+		String name = testData.get(rowNumber).get("name");
 		String email = testData.get(rowNumber).get("email");
-		String orderRef = testData.get(rowNumber).get("orderref");
-		String message = testData.get(rowNumber).get("message");
+		String enquiry = testData.get(rowNumber).get("enquiry");
 		
-		contactUsPage.fillContactUsForm(heading, email, orderRef, message);
+		contactUsPage.fillContactUsForm(name, email, enquiry);
 
 	}
 

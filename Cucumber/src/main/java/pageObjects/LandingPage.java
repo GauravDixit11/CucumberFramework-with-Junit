@@ -7,16 +7,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class AccountsPage {
+public class LandingPage {
 	private WebDriver driver;
+	private By accountSections = By.xpath("(//div[@class='col-sm-3']/ul)[4]/li");
 
-	private By accountSections = By.cssSelector("div#center_column span");
-
-	public AccountsPage(WebDriver driver) {
+	public LandingPage(WebDriver driver) {
 		this.driver = driver;
 	}
-	
-	public String getAccountsPageTitle() {
+
+	public String getLandingPageTitle() {
 		return driver.getTitle();
 	}
 

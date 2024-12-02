@@ -2,18 +2,16 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class ContactUsPage {
 	
 	private WebDriver driver;
 
-	private By subjectHeading = By.id("id_contact");
-	private By email = By.id("email");
-	private By orderRef = By.id("id_order");
-	private By messageText = By.id("message");
-	private By sendButton = By.id("submitMessage");
-	private By successMessg = By.cssSelector("div#center_column p");
+	private By yourName = By.id("input-name");
+	private By email = By.id("input-email");
+	private By enquiry = By.id("input-enquiry");
+	private By submitButton = By.xpath("//input[@value='Submit']");
+	private By successMessg = By.xpath("//p[text()='Your enquiry has been successfully sent to the store owner!']");
 
 	public ContactUsPage(WebDriver driver) {
 		this.driver = driver;
@@ -23,24 +21,18 @@ public class ContactUsPage {
 		return driver.getTitle();
 	}
 	
-	public void fillContactUsForm(String heading, String emailId, String orderReference, String message) {
-		Select select = new Select(driver.findElement(subjectHeading));
-		select.selectByVisibleText(heading);
+	public void fillContactUsForm(String Name, String emailId, String enquiryMsg) {	
+		driver.findElement(yourName).sendKeys(Name);
 		driver.findElement(email).sendKeys(emailId);
-		driver.findElement(orderRef).sendKeys(orderReference);
-		driver.findElement(messageText).sendKeys(message);
+		driver.findElement(enquiry).sendKeys(enquiryMsg);
 	}
 
 	public void clickSend() {
-		driver.findElement(sendButton).click();
+		driver.findElement(submitButton).click();
 	}
 	
 	public String getSuccessMessg() {
 		return driver.findElement(successMessg).getText();
-	}
-	
-	
-	
-	
+	}	
 
 }

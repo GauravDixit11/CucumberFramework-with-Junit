@@ -65,30 +65,33 @@
 									<exclude>**/*IT*.java</exclude>
 								</excludes> -->
 								<includes>
-								
+
 									<!-- UNCOMMENT BELOW LINE
 									- To execute feature files with a single runner -->
-									
+
 									<include>**/TestRunner.java</include>
-									
-									<!-- UNCOMMENT BELOW LINE - To execute feature files with multiple
+
+									<!-- UNCOMMENT BELOW LINE - To execute
+									feature files with multiple
 									runners
 									<include>**/*Runner.java</include> -->
-									
+
 								</includes>
-								<!-- UNCOMMENT BELOW 3 LINES - To execute using parallel or
+								<!-- UNCOMMENT BELOW 3 LINES - To execute using
+								parallel or
 								combination option -->
-								
+
 								<parallel>methods</parallel>
 								<threadCount>10</threadCount>
 								<perCoreThreadCount>true</perCoreThreadCount>
-								
-								<!-- UNCOMMENT BELOW 3 LINES - To execute using forking or
+
+								<!-- UNCOMMENT BELOW 3 LINES - To execute using
+								forking or
 								combination option -->
 								<!-- <forkCount>2</forkCount>
 								<reuseForks>true</reuseForks>
 								<reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory> -->
-								
+
 							</configuration>
 						</execution>
 					</executions>
@@ -98,7 +101,6 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
 
 
 	<dependencies>
@@ -119,7 +121,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>4.4.3</version>
+			<version>5.9.2</version>
 		</dependency>
 
 		<dependency>
@@ -133,11 +135,11 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>6.10.3</version>
 		</dependency>
-		
+
 		<dependency>
-			    <groupId>io.cucumber</groupId>
-			    <artifactId>cucumber-picocontainer</artifactId>
-			    <version>4.2.6</version>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>4.2.6</version>
 		</dependency>
 
 		<dependency>
@@ -165,6 +167,13 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.0.0</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.17.0</version>
+		</dependency>
+
 
 	</dependencies>
 </project>
